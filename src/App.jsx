@@ -12,8 +12,10 @@ import { format } from "date-fns";
 
 import { useDispatch, useSelector } from "react-redux";
 import { addPost } from "./store/postsSlice";
+import {deletePost} from "./store/postsSlice"
 
 function App() {
+
   const posts =useSelector((store)=>store.posts)
   console.log(posts);
 
@@ -27,6 +29,7 @@ function App() {
   const [postTitle, setPostTitle] = useState("");
   const [postBody, setPostBody] = useState("");
   const navigate = useNavigate();
+  
 
   useEffect(() => {
     const filteredResults = posts.filter(
@@ -55,8 +58,9 @@ function App() {
   };
 
   const handleDelete = (id) => {
-    const postsList = posts.filter((post) => post.id !== id);
-    setPosts(postsList);
+    // const postsList = posts.filter((post) => post.id !== id);
+    // setPosts(postsList);
+    dispatch(deletePost(id))
     navigate("/");
   };
 

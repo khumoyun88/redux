@@ -211,9 +211,14 @@ body {
   border-radius: 0.25rem;
   padding: 0.5rem;
   font-size: 1rem;
-  background-color: red;
+  background-color: rgb(115, 112, 112);
   color: #fff;
   cursor: pointer;
+  margin-inline: 5px;
+}
+
+.PostPage .danger {
+  background-color: red;
 }
 
 .statusMsg {

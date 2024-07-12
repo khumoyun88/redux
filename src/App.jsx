@@ -16,7 +16,7 @@ import {deletePost} from "./store/postsSlice"
 
 function App() {
 
-  const posts =useSelector((store)=>store.posts)
+  const posts =useSelector((store)=>store.postsReducer.post)
   console.log(posts);
 
   const dispatch=useDispatch()
